@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventSphere - Discover Upcoming Events</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">EventSphere</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="events.html" class="nav-link">Upcoming Events</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Upcoming Events</h1>
+            <p>Find the best events happening around you</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search events...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Events -->
+    <section class="featured-events">
+        <div class="container">
+            <h2>Featured Events</h2>
+            <div class="events-grid">
+                <!-- Event Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/techfest.jpg" alt="TechFest 2025">
+                        <span class="event-date">Sep 15, 2025</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>TechFest 2025</h3>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> San Francisco Convention Center</p>
+                        <p class="event-desc">Annual technology festival featuring startups, AI talks, and networking.</p>
+                        <a href="event-detail.html?id=1" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/music-night.jpg" alt="Music Vibes Night">
+                        <span class="event-date">Sep 25, 2025</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Music Vibes Night</h3>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Madison Square Garden, New York</p>
+                        <p class="event-desc">A live concert night with global artists and DJs.</p>
+                        <a href="event-detail.html?id=2" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Event Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/food-festival.jpg" alt="Food Festival">
+                        <span class="event-date">Oct 5, 2025</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>International Food Festival</h3>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> Chicago Lakeside Center</p>
+                        <p class="event-desc">Taste culinary delights from around the world with top chefs.</p>
+                        <a href="event-detail.html?id=3" class="btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all">
+                <a href="events.html" class="btn-secondary">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter to get updates on upcoming events</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EventSphere</h3>
+                    <p>Discover the best events happening around you.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventSphere. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">EventSphere</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="events.html" class="nav-link">Upcoming Events</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Event Detail Section -->
+    <section class="event-detail">
+        <div class="container">
+            <div class="event-detail-content">
+                <!-- Event content will be loaded dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EventSphere</h3>
+                    <p>Discover the best events happening around you.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventSphere. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Events data (same as in events.html)
+        const events = [
+            {
+                id: 1,
+                title: "TechFest 2025",
+                date: "September 15, 2025",
+                time: "10:00 AM - 6:00 PM",
+                venue: "San Francisco Convention Center",
+                description: "Annual technology festival featuring startups, AI talks, and networking. Join us for a day of innovation, learning, and networking with industry leaders. This year's theme is 'The Future of AI' with special keynote speakers from top tech companies.",
+                fullDescription: "TechFest is the premier technology event of the year, bringing together innovators, entrepreneurs, and tech enthusiasts from around the world. This year's focus is on artificial intelligence, with expert panels, hands-on workshops, and startup showcases. Whether you're a developer, investor, or simply curious about technology, TechFest offers something for everyone.",
+                image: "images/techfest.jpg",
+                category: "tech",
+                map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.681434928754!2d-122.402472924372!3d37.785834471916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064d4c79d23%3A0x7c4fef0bce920b41!2sMoscone%20Center!5e0!3m2!1sen!2sus!4v1685488799999!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+            },
+            {
+                id: 2,
+                title: "Music Vibes Night",
+                date: "September 25, 2025",
+                time: "7:00 PM - 11:00 PM",
+                venue: "Madison Square Garden, New York",
+                description: "A live concert night with global artists and DJs.",
+                fullDescription: "Music Vibes Night brings together the biggest names in music for an unforgettable evening of performances. Featuring a diverse lineup of artists across multiple genres, this event promises to be the musical highlight of the year. With state-of-the-art sound and lighting production, it's an experience you won't want to miss.",
+                image: "images/music-night.jpg",
+                category: "music",
+                map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.172823957024!2d-73.99383682436604!3d40.75050427138738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259afdcfafc0d%3A0x7a5e39e9a9e9354!2sMadison%20Square%20Garden!5e0!3m2!1sen!2sus!4v1685488899999!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+            },
+            {
+                id: 3,
+                title: "International Food Festival",
+                date: "October 5, 2025",
+                time: "12:00 PM - 8:00 PM",
+                venue: "Chicago Lakeside Center",
+                description: "Taste culinary delights from around the world with top chefs.",
+                fullDescription: "The International Food Festival is a culinary journey around the globe without leaving Chicago. Sample dishes from over 50 countries, watch cooking demonstrations by world-renowned chefs, and participate in interactive workshops. From street food to gourmet cuisine, this festival celebrates the diversity and creativity of global culinary traditions.",
+                image: "images/food-festival.jpg",
+                category: "food",
+                map: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.595919680099!2d-87.634388824366!3d41.86727127123966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cbb65e1cfc7%3A0x429aa1fcd0e0b3e2!2sLakeside%20Center!5e0!3m2!1sen!2sus!4v1685488999999!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+            }
+        ];
+
+        // Load event details based on URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = parseInt(urlParams.get('id'));
+            
+            const event = events.find(e => e.id === eventId) || events[0];
+            
+            const eventDetailContent = document.querySelector('.event-detail-content');
+            eventDetailContent.innerHTML = `
+                <div class="event-detail-header">
+                    <h1>${event.title}</h1>
+                    <div class="event-meta">
+                        <p><i class="far fa-calendar-alt"></i> ${event.date} | ${event.time}</p>
+                        <p><i class="fas fa-map-marker-alt"></i> ${event.venue}</p>
+                    </div>
+                </div>
+                <div class="event-detail-image">
+                    <img src="${event.image}" alt="${event.title}">
+                </div>
+                <div class="event-detail-body">
+                    <h2>About This Event</h2>
+                    <p>${event.fullDescription || event.description}</p>
+                    
+                    <h2>Location</h2>
+                    <div class="event-map">
+                        ${event.map || '<p>Map not available</p>'}
+                    </div>
+                    
+                    <div class="event-actions">
+                        <button class="btn-primary btn-large">RSVP Now</button>
+                        <button class="btn-secondary"><i class="far fa-share-square"></i> Share Event</button>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

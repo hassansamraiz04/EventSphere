@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - EventSphere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">EventSphere</a>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="events.html" class="nav-link active">Upcoming Events</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Events Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Upcoming Events</h1>
+            <p>Discover amazing events happening near you</p>
+        </div>
+    </section>
+
+    <!-- Events Filter -->
+    <section class="events-filter">
+        <div class="container">
+            <div class="filter-options">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="tech">Technology</option>
+                    <option value="music">Music</option>
+                    <option value="food">Food & Drink</option>
+                    <option value="sports">Sports</option>
+                </select>
+                <select id="date-filter">
+                    <option value="all">Any Date</option>
+                    <option value="week">This Week</option>
+                    <option value="month">This Month</option>
+                    <option value="upcoming">Upcoming</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Grid -->
+    <section class="events-grid-section">
+        <div class="container">
+            <div class="events-grid">
+                <!-- Event cards will be loaded dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>EventSphere</h3>
+                    <p>Discover the best events happening around you.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EventSphere. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Events data
+        const events = [
+            {
+                id: 1,
+                title: "TechFest 2025",
+                date: "September 15, 2025",
+                time: "10:00 AM - 6:00 PM",
+                venue: "San Francisco Convention Center",
+                description: "Annual technology festival featuring startups, AI talks, and networking.",
+                image: "images/techfest.jpg",
+                category: "tech"
+            },
+            {
+                id: 2,
+                title: "Music Vibes Night",
+                date: "September 25, 2025",
+                time: "7:00 PM - 11:00 PM",
+                venue: "Madison Square Garden, New York",
+                description: "A live concert night with global artists and DJs.",
+                image: "images/music-night.jpg",
+                category: "music"
+            },
+            {
+                id: 3,
+                title: "International Food Festival",
+                date: "October 5, 2025",
+                time: "12:00 PM - 8:00 PM",
+                venue: "Chicago Lakeside Center",
+                description: "Taste culinary delights from around the world with top chefs.",
+                image: "images/food-festival.jpg",
+                category: "food"
+            },
+            {
+                id: 4,
+                title: "Marathon 2025",
+                date: "October 12, 2025",
+                time: "8:00 AM - 2:00 PM",
+                venue: "Central Park, New York",
+                description: "Annual city marathon with participants from around the world.",
+                image: "images/marathon.jpg",
+                category: "sports"
+            },
+            {
+                id: 5,
+                title: "Startup Pitch Competition",
+                date: "October 20, 2025",
+                time: "9:00 AM - 5:00 PM",
+                venue: "Silicon Valley Innovation Center",
+                description: "Watch promising startups pitch to top investors.",
+                image: "images/startup-pitch.jpg",
+                category: "tech"
+            },
+            {
+                id: 6,
+                title: "Jazz Festival",
+                date: "October 28, 2025",
+                time: "6:00 PM - 11:00 PM",
+                venue: "New Orleans Jazz Hall",
+                description: "Celebrate the best of jazz music with legendary performers.",
+                image: "images/jazz-festival.jpg",
+                category: "music"
+            }
+        ];
+
+        // Function to render events
+        function renderEvents(eventsToRender) {
+            const eventsGrid = document.querySelector('.events-grid');
+            eventsGrid.innerHTML = '';
+            
+            if (eventsToRender.length === 0) {
+                eventsGrid.innerHTML = '<p class="no-events">No events found matching your criteria.</p>';
+                return;
+            }
+            
+            eventsToRender.forEach(event => {
+                const eventCard = document.createElement('div');
+                eventCard.className = 'event-card';
+                eventCard.innerHTML = `
+                    <div class="event-image">
+                        <img src="${event.image}" alt="${event.title}">
+                        <span class="event-date">${event.date}</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>${event.title}</h3>
+                        <p class="event-venue"><i class="fas fa-map-marker-alt"></i> ${event.venue}</p>
+                        <p class="event-time"><i class="far fa-clock"></i> ${event.time}</p>
+                        <p class="event-desc">${event.description}</p>
+                        <a href="event-detail.html?id=${event.id}" class="btn-primary">Learn More</a>
+                    </div>
+                `;
+                eventsGrid.appendChild(eventCard);
+            });
+        }
+
+        // Filter events
+        function filterEvents() {
+            const category = document.getElementById('category-filter').value;
+            const dateFilter = document.getElementById('date-filter').value;
+            
+            let filteredEvents = events;
+            
+            if (category !== 'all') {
+                filteredEvents = filteredEvents.filter(event => event.category === category);
+            }
+            
+            // Simple date filtering logic (in a real app, you'd use actual date comparisons)
+            if (dateFilter === 'week') {
+                filteredEvents = filteredEvents.filter((_, index) => index < 2);
+            } else if (dateFilter === 'month') {
+                filteredEvents = filteredEvents.filter((_, index) => index < 4);
+            }
+            
+            renderEvents(filteredEvents);
+        }
+
+        // Initialize events page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderEvents(events);
+            
+            // Add event listeners to filters
+            document.getElementById('category-filter').addEventListener('change', filterEvents);
+            document.getElementById('date-filter').addEventListener('change', filterEvents);
+        });
+    </script>
+</body>
+</html>
